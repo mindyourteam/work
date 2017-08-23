@@ -168,6 +168,7 @@ return [
          */
         Laravel\Tinker\TinkerServiceProvider::class,
         Cog\Likeable\Providers\LikeableServiceProvider::class,
+        Knowfox\Passwordless\ServiceProvider::class,
 
         /*
          * Application Service Providers...

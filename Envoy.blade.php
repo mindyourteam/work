@@ -1,8 +1,8 @@
 @servers(['web' => 'olav.net'])
 
 @setup
-    $repo = 'ssh://gogs@code.schettler.net:8222/olav/knowfox.git';
-    $root_dir = '/var/www/knowfox';
+    $repo = 'ssh://gogs@code.schettler.net:8222/olav/zappa.git';
+    $root_dir = '/var/www/zappa';
     $releases_dir = "{$root_dir}/releases";
     $now = strftime('%Y%m%d-%H%M%S');
     $release_dir = "{$releases_dir}/{$now}";
@@ -34,9 +34,6 @@
     ln -s {{ $root_dir }}/shared/storage/app/public public/storage
     ln -s {{ $root_dir }}/shared/cache bootstrap/cache
     ln -s {{ $root_dir }}/shared/{{ $env }} .env
-    rm -rf public/system
-    ln -s {{ $root_dir }}/shared/uploads public/uploads
-    ln -s {{ $root_dir }}/shared/presentation public/presentation
 
     composer install --ignore-platform-reqs
 

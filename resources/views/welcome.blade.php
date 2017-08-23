@@ -78,7 +78,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Team ZAPPA
+                    {{config('app.name')}}
                 </div>
             </div>
         </div>
