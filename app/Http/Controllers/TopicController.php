@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\TopicRequest;
 use App\Models\Topic;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Knowfox\Crud\Controllers\CrudController;
 
 class TopicController extends CrudController
@@ -11,13 +13,14 @@ class TopicController extends CrudController
     public function __construct()
     {
         $this->setup = (object)[
-            'deletes' => true,
+            //'deletes' => true,
             'model' => Topic::class,
             'entity_name' => 'topic',
             'entity_title' => ['s Thema', 'Themen'],
-            'order_by' => 'title',
+            'order_by' => 'count|desc',
 
             'columns' => [
+                'count' => 'Schmerzen',
                 'title' => 'Titel',
             ],
 
@@ -54,5 +57,17 @@ class TopicController extends CrudController
     public function destroy(Topic $topic)
     {
         return $this->destroyCrud($topic);
+    }
+
+    public function hide(Topic $topic)
+    {
+        $topic->users()->sync([Auth::id() => ['hidden' => true]]);
+        return response()->redirectToRoute('home');
+    }
+
+    public function count(Topic $topic)
+    {
+        $topic->increment('count');
+        return response()->redirectToRoute('home');
     }
 }

@@ -14,7 +14,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $topics = Topic::inRandomOrder()->limit(3)->get();
+        $topics = Topic::whereDoesntHave('users', function ($query)
+        {
+            $query->where('hidden', 1);
+        })
+            ->inRandomOrder()
+            ->limit(3)->get();
         return view('home', ['topics' => $topics]);
     }
 }

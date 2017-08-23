@@ -9,7 +9,16 @@
 
                     <div class="panel-body dow"><ul>
                         @foreach ($topics as $topic)
-                            <li>{{$topic->title}}</li>
+                            <li>
+                                <form class="pull-right" action="{{ route('topic.hide', [$topic]) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <button class="btn ctn-default"><i class="glyphicon glyphicon-scissors"></i></button>
+                                </form>
+                                <form class="pull-right" action="{{ route('topic.count', [$topic]) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <button class="btn ctn-default"><i class="glyphicon glyphicon-fire"></i></button>
+                                </form>
+                                {{$topic->title}}</li>
                         @endforeach
                         </ul></div>
                 </div>
@@ -21,13 +30,13 @@
                     Wir hatten uns am 23.08.2017 eine <em>Definition of Work</em> gegeben.
                     Diese kleine App zeigt zufällig jeweils drei der Themen daraus.</p>
                 <p>
-                    Das will ich bei Gelegenheit noch um zwei Taster und ein Eingabefeld ergänzen.
-                    Einen Taster zum Drücken, falls der Schmerz immer noch besteht. Einen zweiten,
-                    wenn man dieses Thema nicht mehr sehen will. Über das Eingabefeld konnen weitere
-                    Themen hinzugefügt werden.</p>
+                    Es gibt zwei Taster pro Thema: <i class="glyphicon glyphicon-scissors"></i> versteckt
+                    das Thema für dich. <i class="glyphicon glyphicon-fire"></i> zählt den Schmerzfaktor des Themas
+                    hoch. Wir könnten uns in jeder Retro die Themen mit den höchsten Schmerzen ansehen.
+                </p>
                 <p>
-                    Über die Tastendrücke kann ich dann ein Ranking machen und eine Liste der top
-                    Schmerzpunkte anzeigen.
+                    Im Dropdown-Menü unter deinem Namen liegt <a href="{{ route('topic.index') }}">eine einfache Verwaltung der Themen</a>. Dort kann jeder neue
+                    Themen hinzufügen. Das Löschen ist für den Augenblick deaktiviert.
                 </p>
             </div>
         </div>

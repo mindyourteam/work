@@ -23,4 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('topic', 'TopicController');
+
+    Route::post('/hide/{topic}', 'TopicController@hide')->name('topic.hide');
+    Route::post('/count/{topic}', 'TopicController@count')->name('topic.count');
 });

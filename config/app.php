@@ -170,6 +170,7 @@ return [
         Cog\Likeable\Providers\LikeableServiceProvider::class,
         Knowfox\Passwordless\ServiceProvider::class,
         Knowfox\Crud\ServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...

@@ -8350,7 +8350,11 @@ button.close {
   }
 }
 
-.panel-body {
+.panel-body.dow {
   font-size: 36px;
+}
+
+.pull-right {
+  margin-left: 4px;
 }
 
