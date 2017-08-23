@@ -7,11 +7,11 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><strong>Definition of Work</strong></div>
 
-                    <div class="panel-body">
+                    <div class="panel-body"><ul>
                         @foreach ($topics as $topic)
-                            <p>{{$topic->title}}</p>
+                            <li>{{$topic->title}}</li>
                         @endforeach
-                    </div>
+                        </ul></div>
                 </div>
             </div>
 
