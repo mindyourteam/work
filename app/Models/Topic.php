@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model
 {
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'count'];
 
     public function users()
     {

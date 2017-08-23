@@ -7,16 +7,16 @@
         ?>
         @if (!empty($field['after']))
             <div class="input-group">
-                @include('crud.fields._input')
+                @include('crud::fields._input')
                 <span class="input-group-addon">{{ $field['after'] }}</span>
             </div>
         @elseif (!empty($field['button']))
             <div class="input-group">
-                @include('crud.fields._input')
+                @include('crud::fields._input')
                 <span class="input-group-btn">{!! $field['button'] !!}</span>
             </div>
         @else
-            @include('crud.fields._input')
+            @include('crud::fields._input')
         @endif
 
     </div>

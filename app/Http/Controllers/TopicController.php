@@ -25,6 +25,10 @@ class TopicController extends CrudController
             ],
 
             'fields' => [
+                'count' => [
+                    'label' => 'Schmerzen',
+                    'type' => 'number',
+                ],
                 'title' => [
                     'label' => 'Titel',
                     'type' => 'textarea',
