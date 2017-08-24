@@ -12,6 +12,7 @@ class UserController extends CrudController
     public function __construct()
     {
         $this->setup = (object)[
+            'deletes' => true,
             'is_admin' => true,
             'model' => User::class,
             'entity_name' => 'user',
@@ -37,7 +38,6 @@ class UserController extends CrudController
 
     public function store(UserRequest $request)
     {
-        $request->password = bcrypt($request->password);
         list($ride, $response) = $this->storeCrud($request);
         return $response;
     }
@@ -49,7 +49,6 @@ class UserController extends CrudController
 
     public function update(UserRequest $request, User $user)
     {
-        $request->password = bcrypt($request->password);
         return $this->updateCrud($request, $user);
     }
 
