@@ -43,8 +43,8 @@
     </div>
     <footer class="footer">
         <div class="container">
-            <p class="text-muted">
-                Olav Schettler
+            <p class="text-muted text-center">
+                <a href="https://wiki.chefkoch.de/display/DEV/Team+Zappa">Team ZAPPA</a>
                 | <a href="https://jira.chefkoch.de/stash/users/olav.schettler/repos/zappa/">Source</a>
             </p>
         </div>
