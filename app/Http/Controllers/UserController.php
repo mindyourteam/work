@@ -38,7 +38,7 @@ class UserController extends CrudController
 
     public function store(UserRequest $request)
     {
-        list($ride, $response) = $this->storeCrud($request);
+        list($user, $response) = $this->storeCrud($request);
         return $response;
     }
 
