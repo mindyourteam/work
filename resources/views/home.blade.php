@@ -41,4 +41,12 @@
             </div>
         </div>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <p class="text-muted">
+                Olav Schettler
+                | <a href="https://jira.chefkoch.de/stash/users/olav.schettler/repos/zappa/">Source</a>
+            </p>
+        </div>
+    </footer>
 @endsection
