@@ -77,6 +77,8 @@
             @endif
 
             <div class="content">
+                @include('crud::partials.messages')
+
                 <div class="title m-b-md">
                     {{config('app.name')}}
                 </div>
