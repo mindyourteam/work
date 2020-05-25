@@ -1,1 +1,0 @@
-@include('crud::fields._input', ['type' => 'hidden', 'value' => $entity->{$name}])

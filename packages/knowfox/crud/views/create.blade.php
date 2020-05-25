@@ -1,1 +1,0 @@
-@include('crud::form', ['mode' => 'create'])
