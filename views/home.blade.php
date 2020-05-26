@@ -5,7 +5,7 @@
 
     <article class="uk-article uk-margin-top uk-margin-bottom">
 
-        <h1 class="uk-article-title">Fragen zur Teamkultur</h1>
+        <h1 class="uk-article-title">Definition of Work</h1>
 
         <div class="uk-card uk-card-default uk-margin-top uk-card-body">
         @foreach ($topics as $topic)
